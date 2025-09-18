@@ -1,0 +1,1 @@
+# -S7-Pr-ctica-de-DDL-con-Python-y-PostgreSQL
