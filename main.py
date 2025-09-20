@@ -25,31 +25,32 @@ CREATE TABLE IF NOT EXISTS pedidos (
     producto VARCHAR(100) NOT NULL
 );
 """)
-print("Tablas creadas ✅")
+print("Tablas creadas")
 
 # DDL: Agregar columnas
 cur.execute("ALTER TABLE usuarios ADD COLUMN IF NOT EXISTS edad INT;")
 cur.execute("ALTER TABLE pedidos ADD COLUMN IF NOT EXISTS cantidad INT DEFAULT 1;")
-print("Columnas agregadas ✅")
+print("Columnas agregadas")
 
 # DDL: Renombrar columnas
 cur.execute("ALTER TABLE usuarios RENAME COLUMN nombre TO nombre_completo;")
-print("Columna renombrada ✅")
+print("Columna renombrada")
 
 # DDL: Eliminar columnas
 cur.execute("ALTER TABLE pedidos DROP COLUMN IF EXISTS cantidad;")
-print("Columna eliminada ✅")
+print("Columna eliminada")
 
 # DDL: Agregar un CHECK
 cur.execute("ALTER TABLE usuarios ADD CONSTRAINT check_edad CHECK (edad >= 0);")
-print("Restricción CHECK agregada ✅")
+print("Restricción CHECK agregada")
 
 # DDL: Eliminar una tabla
 cur.execute("DROP TABLE IF EXISTS pedidos;")
-print("Tabla eliminada ✅")
+print("Tabla eliminada")
 
 # Guardar cambios y cerrar
 conn.commit()
 cur.close()
 conn.close()
-print("Conexión cerrada ✅")
+print("Conexión cerrada")
+
